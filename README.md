@@ -1,2 +1,4 @@
 # Zephyr
-A totally different CSS framework strieving to achieve elegance with darkmode built-in using only HTML. No CSS or JS. Heavily in development.
+A totally different CSS framework striving to achieve elegance with dark mode built-in using only HTML. No CSS or JS. Heavily in development.
+
+https://dxxxxy.github.io/Zephyr/

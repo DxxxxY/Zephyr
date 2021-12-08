@@ -1,9 +1,13 @@
 // Dark mode
-let dark = true
+var dark = true
+var darkcolor = "#4a94fa"
+var lightcolor = "#990099"
+var darkbgcolor = "#000000"
+var lightbgcolor = "#ffffff"
 if (localStorage.getItem("current_theme") == "light") dark = false
 else localStorage.setItem("current_theme", dark ? "dark" : "light")
 
-let i = 0
+var i = 0
 
 //Loop
 setInterval(() => {
@@ -15,14 +19,14 @@ setInterval(() => {
         if (window.location.pathname.split("/").pop() == "")
             if (navlink.getAttribute("href") == "index.html") return navlink.className = "active"
         if (navlink.getAttribute("href") == window.location.pathname.split("/").pop()) return navlink.className = "active"
-        navlink.style.color = dark ? "#0d5ca5" : "#600360"
+        navlink.style.color = dark ? shadeColor(darkcolor, 2) : shadeColor(lightcolor, 2)
     })
 
     document.querySelector("zdark").innerText = dark ? "Light Mode" : "Dark Mode"
 
     // Apply site wide color scheme
-    document.querySelector(":root").style.setProperty("--color", dark ? "#4a94fa" : "#990099")
-    document.querySelector(":root").style.setProperty("--bgColor", dark ? "#000000" : "#ffffff")
+    document.querySelector("*").style.setProperty("--color", dark ? darkcolor : lightcolor)
+    document.querySelector("*").style.setProperty("--bgColor", dark ? darkbgcolor : lightbgcolor)
 
     //Rotate gradient
     document.querySelectorAll("zh1").forEach(e => {
@@ -35,12 +39,12 @@ setInterval(() => {
 document.addEventListener("DOMContentLoaded", () => document.querySelectorAll("zloader").forEach(loader => { if (loader.getAttribute("waitFor") == "windowLoad") loader.remove() }))
 
 HTMLElement.prototype.attributeToCSS = function() {
-    Array.prototype.slice.call(this.attributes).forEach(e => {
-        if (e.name == "href") {
-            this.addEventListener("click", (() => window.location.href = e.value))
+    Array.prototype.slice.call(this.attributes).forEach(a => {
+        if (a.name == "href") {
+            this.addEventListener("click", (() => window.location.href = a.value))
             return this.style.cursor = "pointer"
         }
-        this.style[e.name] = e.value
+        this.style[a.name] = a.value
     })
 }
 
@@ -50,4 +54,32 @@ document.querySelector("zdark").addEventListener("click", () => {
     dark = !dark
 })
 
+Array.prototype.slice.call(document.querySelector("zconfig").attributes).forEach(a => {
+    if (a.name.startsWith("--")) return document.querySelector("*").style.setProperty(a.name.split("--").pop(), a.value)
+    if (a.name.startsWith("$")) return window[a.name.split("$").pop()] = a.value
+    document.querySelector("*").style[a.name] = a.value
+})
+
 document.querySelectorAll("zloader, znav, zl, za, zh1, zdark, zbody").forEach(custom => custom.attributeToCSS())
+
+const shadeColor = (color, decimal) => {
+    const base = color.startsWith('#') ? 1 : 0;
+
+    var r = parseInt(color.substring(base, 3), 16);
+    var g = parseInt(color.substring(base + 2, 5), 16);
+    var b = parseInt(color.substring(base + 4, 7), 16);
+
+    r = Math.round(r / decimal);
+    g = Math.round(g / decimal);
+    b = Math.round(b / decimal);
+
+    r = (r < 255) ? r : 255;
+    g = (g < 255) ? g : 255;
+    b = (b < 255) ? b : 255;
+
+    const rr = ((r.toString(16).length === 1) ? `0${r.toString(16)}` : r.toString(16));
+    const gg = ((g.toString(16).length === 1) ? `0${g.toString(16)}` : g.toString(16));
+    const bb = ((b.toString(16).length === 1) ? `0${b.toString(16)}` : b.toString(16));
+
+    return `#${rr}${gg}${bb}`;
+}
