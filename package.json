@@ -1,5 +1,5 @@
 {
     "scripts": {
-        "min": "css-minify -f zephyr.css -o /"
+        "min": "minify zephyr.css > zephyr.min.css && minify zephyr.js > zephyr.min.js"
     }
 }
