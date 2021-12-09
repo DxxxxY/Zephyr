@@ -1,0 +1,5 @@
+{
+    "scripts": {
+        "min": "css-minify -f zephyr.css -o /"
+    }
+}

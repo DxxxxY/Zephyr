@@ -13,6 +13,7 @@ const darkSwitch = () => {
     dark = !dark
 
     document.querySelectorAll("za").forEach(navlink => {
+        if (navlink.parentNode.nodeName.toLowerCase() != "zli") return
         if (window.location.pathname.split("/").pop() == "")
             if (navlink.getAttribute("href") == "index.html") return navlink.className = "active"
         if (navlink.getAttribute("href") == window.location.pathname.split("/").pop()) return navlink.className = "active"
@@ -53,6 +54,10 @@ HTMLElement.prototype.attributeToCSS = function() {
             this.addEventListener("click", (() => window.location.href = a.value))
             return this.style.cursor = "pointer"
         }
+        if (a.name == "src") {
+            if (a.value.includes("http")) return this.style.backgroundImage = `url(${a.value})`
+            return this.style.backgroundImage = `url(${a.value})`
+        }
         this.style[a.name] = a.value
     })
 }
@@ -67,9 +72,8 @@ setInterval(() => {
     i++
 }, 10)
 
-document.querySelector("zbody").style.opacity = 0
-
 document.addEventListener("DOMContentLoaded", () => document.querySelectorAll("zloader").forEach(loader => {
+    document.querySelector("zbody").style.opacity = 0
     if (loader.getAttribute("waitFor") == "windowLoad") {
         if (loader.hasAttribute("delay")) {
             return setTimeout(() => {

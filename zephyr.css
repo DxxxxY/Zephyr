@@ -7,15 +7,12 @@
 
 znav {
     display: flex;
-    width: 100%;
     height: 10vw;
     align-items: center;
     justify-content: space-between;
 }
 
 zl {
-    padding: 0;
-    margin: 0;
     display: flex;
     list-style-type: none;
 }
@@ -27,18 +24,20 @@ zbody {
 
 zfoot {
     display: flex;
-    width: 100%;
     height: 10vw;
     align-items: center;
     justify-content: space-between;
+}
+
+zp {
+    font-size: 1.2vw;
+    letter-spacing: 0.01vw;
 }
 
 zh1 {
     -webkit-text-fill-color: transparent;
     font-size: 4vw;
     letter-spacing: 0.5vw;
-    padding: 0;
-    margin: 0;
 }
 
 zdark {
@@ -50,46 +49,83 @@ zdark {
 zh2 {
     font-size: 3.5vw;
     letter-spacing: 0.1vw;
-    padding: 0;
-    margin: 0;
-    text-align: center;
 }
 
 zh3 {
     font-size: 2vw;
     letter-spacing: 0.05vw;
-    padding: 0;
-    margin: 0;
-    text-align: center;
+}
+
+zh4 {
+    font-size: 1.3vw;
+    letter-spacing: 0.05vw;
 }
 
 zli {
     font-size: 1.5vw;
     letter-spacing: 0.1vw;
     margin: 0 1vw 0;
-    padding: 0;
 }
 
 zsection {
-    margin: 5vw 0 5vw;
     display: flex;
-    width: 100%;
-    justify-content: space-around;
+    flex-direction: column;
+    height: 20vw;
+    align-items: center;
 }
 
 zloader {
     position: absolute;
     left: 50%;
     top: 50%;
-    z-index: 1;
     width: 120px;
     height: 120px;
     margin: -76px 0 0 -76px;
     border: 16px solid var(--bgColor);
     border-radius: 50%;
     border-top: 16px solid var(--color);
-    -webkit-animation: spin 2s linear infinite;
     animation: spin 2s linear infinite;
+}
+
+zicon {
+    display: block;
+    height: 4vw;
+    width: 4vw;
+    background-size: cover;
+}
+
+ztable {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    font-size: 1.75vw;
+    letter-spacing: 0.15vw;
+    padding: 0;
+    margin: 0;
+    border: 0.25vw solid var(--color);
+    border-radius: 2px;
+}
+
+ztr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+    border-collapse: separate;
+    text-indent: initial;
+    border-spacing: 2px;
+}
+
+ztd {
+    font-size: 1.2vw;
+    letter-spacing: 0.01vw;
+    padding: 1vw;
+    display: table-cell;
+    vertical-align: inherit;
+    border-collapse: separate;
+    text-indent: initial;
+    border-spacing: 2px;
 }
 
 za {
