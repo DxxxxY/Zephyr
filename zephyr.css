@@ -1,6 +1,5 @@
 @import "utils/fonts.css";
 * {
-    font-family: "Euclid Circular B Bold", sans-serif;
     color: var(--color);
     background-color: var(--bgColor);
     scroll-behavior: smooth;
@@ -48,8 +47,7 @@ zdark {
     padding: 0.5vw;
 }
 
-
-/* h2 {
+zh2 {
     font-size: 3.5vw;
     letter-spacing: 0.1vw;
     padding: 0;
@@ -57,19 +55,26 @@ zdark {
     text-align: center;
 }
 
-h3 {
+zh3 {
     font-size: 2vw;
     letter-spacing: 0.05vw;
     padding: 0;
     margin: 0;
     text-align: center;
-} */
+}
 
 zli {
     font-size: 1.5vw;
     letter-spacing: 0.1vw;
     margin: 0 1vw 0;
     padding: 0;
+}
+
+zsection {
+    margin: 5vw 0 5vw;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
 }
 
 zloader {

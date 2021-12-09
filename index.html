@@ -6,13 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="zephyr.css">
-    <!-- TODO: cant change font oops -->
-    <zconfig $darkColor="#4a94fa" --test="test"></zconfig>
+    <zconfig $darkColor="#4a94fa"></zconfig>
     <title>Zephyr - Example</title>
 </head>
 
-<zbody>
-    <zloader waitFor="windowLoad"></zloader>
+<zloader waitFor="windowLoad" delay="2000"></zloader>
+<zbody font-family="Euclid Circular B Bold">
     <znav>
         <zh1>ZEPHYR</zh1>
         <zl>
@@ -20,22 +19,27 @@
                 <za href="index.html">Home</za>
             </zli>
             <zli>
-                <za href="example.html">Example</za>
+                <za href="example.html">Media</za>
             </zli>
             <zli>
-                <za href="example.html">Example</za>
+                <za href="example.html">Guides</za>
             </zli>
             <zli>
-                <za href="example.html">Example</za>
+                <za href="example.html">Stores</za>
             </zli>
             <zli>
-                <za href="example.html">Example</za>
+                <za href="example.html">Contact</za>
             </zli>
             <zli>
-                <za href="example.html">Example</za>
+                <za href="example.html">Credits</za>
             </zli>
         </zl>
     </znav>
+
+    <zsection>
+        <zh2>Welcome</zh2>
+    </zsection>
+
 
     <zfoot>
         <zh1 href="#">ZEPHYR</zh1>
