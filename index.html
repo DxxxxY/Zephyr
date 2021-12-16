@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="font/fonts.css">
     <link rel="stylesheet" href="zephyr.min.css">
     <zconfig $darkColor="#4a94fa"></zconfig>
     <title>Zephyr - Example</title>
@@ -36,21 +37,64 @@
         </zl>
     </znav>
 
-    <zsection>
+    <zsection height="15vw">
         <zh2>Welcome</zh2>
         <zh3>to the framework!</zh3>
-        <!-- <ztable margin="2vw 0 2vw">
-            <ztr>
-                <ztd>
-                    <zp>Table cell 1</zp>
-                </ztd>
-                <ztd>Table cell 2</ztd>
-            </ztr>
-        </ztable> -->
         <zp text-align="center" margin="4vw 5vw 0">A totally different CSS framework striving to achieve elegance and efficiency by using custom HTML tags with predefined CSS and JS instead of classes. It is highly customizable, allowing for CSS properties to be used as HTML attributes. Has dark-mode
             built in. Heavily in development.</zp>
     </zsection>
 
+    <zsection>
+        <zh2>This is a table</zh2>
+        <ztable margin="2vw 0 2vw" text-align="center">
+            <ztr>
+                <zth></zth>
+                <zth>Header 2</zth>
+                <zth>Header 2</zth>
+            </ztr>
+            <ztr>
+                <zth>Header 1</zth>
+                <ztd>Table cell 1</ztd>
+                <ztd>Table cell 2</ztd>
+            </ztr>
+            <ztr>
+                <zth>Header 1</zth>
+                <ztd>Table cell 1</ztd>
+                <ztd>Table cell 2</ztd>
+            </ztr>
+        </ztable>
+    </zsection>
+
+    <zsection height="70vw">
+        <zh2>Contact Us.</zh2>
+        <zh3>Shoot us a message! :)</zh3>
+        <zform action="/test" method="post" margin="2vw 0 2vw">
+            <label for="name">Name: </label>
+            <input required type="text" name="name" id="name">
+            <label for="email">Email: </label>
+            <input required type="email" name="email" id="email">
+            <label for="message">Message: </label>
+            <textarea required name="message" id="message" cols="30" rows="8"></textarea>
+            <label id="random" for="captcha">Captcha: </label>
+            <input required type="text" name="captcha" id="captcha">
+            <button type="submit">Submit</button>
+        </zform>
+    </zsection>
+
+    <zsection height="30vw">
+        <zh2>FAQ</zh2>
+        <zh3>Some general questions about Eros</zh3>
+        <zdl padding="0 8vw 0">
+            <zdt>What is the meaning of Lorem ipsum?</zdt>
+            <zdd>Literally it does not mean anything. It is a sequence of words without a sense of Latin derivation that make up a text also known as filler text, fictitious, blind or placeholder</zdd>
+            <zdt>What is the meaning of Lorem ipsum?</zdt>
+            <zdd>Literally it does not mean anything. It is a sequence of words without a sense of Latin derivation that make up a text also known as filler text, fictitious, blind or placeholder</zdd>
+            <zdt>What is the meaning of Lorem ipsum?</zdt>
+            <zdd>Literally it does not mean anything. It is a sequence of words without a sense of Latin derivation that make up a text also known as filler text, fictitious, blind or placeholder</zdd>
+            <zdt>What is the meaning of Lorem ipsum?</zdt>
+            <zdd>Literally it does not mean anything. It is a sequence of words without a sense of Latin derivation that make up a text also known as filler text, fictitious, blind or placeholder</zdd>
+        </zdl>
+    </zsection>
 
     <zfoot>
         <zh1 href="#">ZEPHYR</zh1>
@@ -59,6 +103,9 @@
         <zdark cursor="pointer"></zdark>
     </zfoot>
     <script src="zephyr.min.js"></script>
+    <script>
+        document.querySelector("zform").addEventListener("zSubmit", e => console.log(e.detail))
+    </script>
 </zbody>
 
 </html>
