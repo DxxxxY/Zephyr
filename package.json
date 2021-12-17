@@ -1,0 +1,22 @@
+{
+    "name": "zephyrfw",
+    "description": "A totally different CSS framework striving to achieve elegance and efficiency by using custom HTML tags with predefined CSS and JS instead of classes. It is highly customizable, allowing for CSS properties to be used as HTML attributes. Has dark-mode built in. Heavily in development.",
+    "version": "1.0.1",
+    "directories": {
+        "doc": "docs"
+    },
+    "scripts": {
+        "min": "minify zephyr.css > zephyr.min.css && minify zephyr.js > zephyr.min.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DxxxxY/Zephyr.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "WTFPL",
+    "bugs": {
+        "url": "https://github.com/DxxxxY/Zephyr/issues"
+    },
+    "homepage": "https://github.com/DxxxxY/Zephyr#readme"
+}
